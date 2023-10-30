@@ -10,9 +10,6 @@ import './style.css';
 import { employeesMock } from '../../data/mock';
 import { Link } from 'react-router-dom';
 
-
-
-
 function EmployeeList() {
 
     const columns = useMemo(
@@ -117,7 +114,6 @@ function EmployeeList() {
     // Event handler to change the page size
     const handlePageSizeChange = (e) => {
         const newPageSize = Number(e.target.value);
-        console.log("page size before", pageSize, " new value should be", newPageSize);
         setPageSize(newPageSize);
     };
     useEffect(() => {
