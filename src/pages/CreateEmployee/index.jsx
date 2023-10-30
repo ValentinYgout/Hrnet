@@ -15,7 +15,7 @@ const CreateEmployee = () => {
     const dispatch = useDispatch();
 
 
-    const [isModalOpen, setIsModalOpen] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [employeeData,setEmployeeData] = useState({
 
             firstName: '',

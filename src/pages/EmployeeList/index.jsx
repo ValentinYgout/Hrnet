@@ -121,7 +121,7 @@ function EmployeeList() {
         console.log("page size after", pageSize);
         tableInstance.setPageSize(pageSize);
         gotoPage(0); // Go back to the first page when changing page size
-    }, [pageSize]); // Add pageSize as a dependency for the useEffect
+    }, [pageSize, gotoPage, tableInstance]); // Add pageSize as a dependency for the useEffect
 
     return (
         <div className="full-page">
