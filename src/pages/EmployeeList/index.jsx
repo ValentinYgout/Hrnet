@@ -88,7 +88,7 @@ function EmployeeList() {
         headerGroups,
         page,
         prepareRow,
-        state: { pageIndex, pageSize: currentPageSize }, // Rename pageSize to currentPageSize
+        state: {pageIndex},
         gotoPage,
         previousPage,
         nextPage,
