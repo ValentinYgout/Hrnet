@@ -16,18 +16,18 @@ const CreateEmployee = () => {
 
 
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [employeeData,setEmployeeData] = useState({
+    const [employeeData, setEmployeeData] = useState({
 
-            firstName: '',
-            lastName: '',
-            dateOfBirth: '',
-            startDate: '',
-            street: '',
-            city: '',
-            state: '',
-            zipCode: '',
-            department: 'Sales', // Default department
-        });
+        firstName: '',
+        lastName: '',
+        dateOfBirth: '',
+        startDate: '',
+        street: '',
+        city: '',
+        state: '',
+        zipCode: '',
+        department: 'Sales', // Default department
+    });
 
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
@@ -110,6 +110,7 @@ const CreateEmployee = () => {
                     id="date-of-birth"
                     showMonthDropdown
                     showYearDropdown
+                    dropdownMode="select"
                     dateFormat="dd/MM/yyyy"
                     onChange={(date) => {
                         setEmployeeData({
@@ -118,13 +119,22 @@ const CreateEmployee = () => {
                         });
                     }} />
                 <label htmlFor="start-date">Start Date</label>
-                <DatePicker required selected={employeeData.startDate} id="start-date" showMonthDropdown showYearDropdown dateFormat="dd/MM/yyyy" // Specify the desired date format
+                <DatePicker
+                    required
+                    selected={employeeData.startDate}
+                    id="start-date"
+                    showMonthDropdown
+                    showYearDropdown
+                    dropdownMode="select"
+                    dateFormat="dd/MM/yyyy"
                     onChange={(date) => {
                         setEmployeeData({
                             ...employeeData,
                             startDate: date
                         });
-                    }} /> {/* Address Fields */}
+                    }} />
+
+                {/* Address Fields */}
                 <fieldset className="address">
                     <legend>Address</legend>
                     <label htmlFor="street">Street</label>
@@ -147,23 +157,8 @@ const CreateEmployee = () => {
                         onChange={(e) => setEmployeeData({
                             ...employeeData,
                             city: e.target.value
-                        })} /> {/*
-          <label htmlFor="state">State</label>
-          <select
-            name="state"
-            id="state"
-            value={employeeData.state}
-            onChange={(e) =>
-              setEmployeeData({
-                ...employeeData,
-                state: e.target.value,
-              })
-            }
-          >
-            <option>State 1</option>
-            <option>State 2</option>
-            <option>State 3</option>
-          </select> */}
+                        })}
+                    />
 
                     <Dropdown
                         required

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 function Dropdown({ label, options, onChange }) {
-  // State to manage the selected option
   const [selectedOption, setSelectedOption] = useState('');
 
   return (

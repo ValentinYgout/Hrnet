@@ -118,7 +118,6 @@ function EmployeeList() {
     };
     useEffect(() => {
         // This code will run after the component re-renders due to state changes
-        console.log("page size after", pageSize);
         tableInstance.setPageSize(pageSize);
         gotoPage(0); // Go back to the first page when changing page size
     }, [pageSize, gotoPage, tableInstance]); // Add pageSize as a dependency for the useEffect
